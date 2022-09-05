@@ -13,8 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
-import org.hibernate.annotations.SortComparator;
-
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,9 +34,5 @@ public class Person {
 
     @Singular
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "person_loan",
-            joinColumns = @JoinColumn(name = "person_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "loan_id", referencedColumnName = "id"))
     private Set<Loan> loans = new HashSet<>();
 }

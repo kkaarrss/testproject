@@ -2,8 +2,6 @@ package com.kars.test.model;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -29,5 +27,5 @@ public class Loan {
     private Long id;
 
     @ManyToMany(mappedBy = "loans", fetch = FetchType.EAGER)
-    private Set<Person> persons = new TreeSet<>();
+    private Set<Person> persons = new HashSet<>();
 }
