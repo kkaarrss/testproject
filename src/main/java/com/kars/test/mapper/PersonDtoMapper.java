@@ -14,8 +14,6 @@ import com.kars.test.model.Person;
 
 @Mapper(componentModel = "spring")
 public interface PersonDtoMapper {
-
-    @Mapping(target = "loans", source = "loans")
     PersonDto map(Person person);
 
     @Mapping(target = "ascription", source = "loan", qualifiedByName = "mapAscription")
