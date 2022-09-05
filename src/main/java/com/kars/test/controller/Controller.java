@@ -21,6 +21,6 @@ public class Controller{
 
     @GetMapping("/persons/{id}")
     public PersonDto test(@PathVariable Long id)  {
-        return personDtoMapper.map(personRepository.findByIdOrderById(id).orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Unable to find resource")));
+        return personDtoMapper.map(personRepository.findById(id).orElseThrow(() -> new ResponseStatusException(NOT_FOUND, "Unable to find resource")));
     }
 }

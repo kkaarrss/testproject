@@ -8,6 +8,4 @@ import org.springframework.stereotype.Repository;
 import com.kars.test.model.Person;
 
 @Repository
-public interface PersonRepository extends JpaRepository<Person, Long> {
-    Optional<Person> findByIdOrderById(Long id);
-}
+public interface PersonRepository extends JpaRepository<Person, Long> {}
